@@ -1,0 +1,1 @@
+update emp_gi_amts SET licid =CONCAT('0', licid) where empid ='3405'

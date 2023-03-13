@@ -1,0 +1,5 @@
+select a.empid as "Emp.ID",empname(a.empid) as "Name",b.policyno as "Policyno",a.premiumamt::int4 as "Premium Amt."
+,TO_CHAR(b.effectdate - INTERVAL '1 MONTH','MM/YYYY') AS "SAL Month"
+--,to_char(this01(b.effectdate-1),'mm:yyyy') as "Month" 
+from sli a,sli_trans b,bills_det c,ind_bills_master d where b.policyno=a.policyno and b.ind_bill_no=c.ind_billno 
+and c.billno = 2022220291 and d.ind_bill_no=c.ind_billno and d.btype in ('SAL','SUBAL')

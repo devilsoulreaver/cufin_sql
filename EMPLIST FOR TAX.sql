@@ -1,0 +1,1 @@
+select distinct empid, empname(empid), empoffice(empid) from ind_bills_master where ofdate between '01/04/2021' and '01/01/2022' and empid between '2801' and '3200' order by empid 

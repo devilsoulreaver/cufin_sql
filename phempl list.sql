@@ -1,0 +1,1 @@
+select distinct empid, empname(empid), paybill.indid from ind_bills_master, paybill where ind_bills_master.ind_bill_no = paybill.ind_bill_no and ind_bills_master.ofdate > '01/03/2021' and paybill.indid='SAPHE'

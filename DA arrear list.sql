@@ -1,0 +1,1 @@
+select distinct ind_bills_master.empid, empname(ind_bills_master.empid), emp_master.dob from ind_bills_master, emp_master where ind_bills_master.empid = emp_master.empid and ind_bills_master.ofdate between '01/08/2019' and '01/03/2021' and emp_master.dob >'01/10/1968'

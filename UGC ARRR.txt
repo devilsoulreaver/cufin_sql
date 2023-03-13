@@ -1,0 +1,6 @@
+update pay_rev_arr_order set todate ='20201-02-28' where fdate ='2019-07-01'
+
+insert into pay_rev_arr_order values ('17', '2021-03-01', '2022-03-31','0','100')
+
+
+delete from pay_rev_arr_order where rate='17' and fdate ='2021-03-01' and todate ='2021-06-30'

@@ -1,0 +1,2 @@
+
+select ind_bills_master.empid,empname(ind_bills_master.empid),empdesig(ind_bills_master.empid),emp_master.mobno,emppayto_acno(ind_bills_master.empid),emppayto_brname(ind_bills_master.empid),empbillsectid(ind_bills_master.empid),gross,NET,OFDATE from emp_master,ind_bills_master, bills_det where ind_bills_master.empid=emp_master.empid and bills_det.ind_billno=ind_bills_master.ind_bill_no  and  bills_det.billno='2021210086'

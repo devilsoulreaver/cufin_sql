@@ -1,0 +1,6 @@
+SELECT ind_bills_master.empid, empname(ind_bills_master.empid), sum(amount) from
+ind_bills_master, paybill
+where ind_bills_master.ind_bill_no = paybill.ind_bill_no
+and indid ='GI'  AND ofdate ='01/07/2022' and btype='SAL'
+group by ind_bills_master.empid
+

@@ -1,0 +1,19 @@
+select 
+	ROW_NUMBER() OVER(ORDER BY (SELECT 1)) AS "SL NO",
+	a.empid as "PF NO", CAST(b.prannumber AS  NUMERIC) as "PRAN NO",
+	empname(a.empid) as "NAME", 
+	c.amount as "EMPLOYEE'S CONTRIBUTION",
+	c.amount as "EMPLOYER'S CONTRIBUTION",
+	c.amount*2 as "NPS TOTAL", 
+	TO_CHAR(a.ofdate - INTERVAL '1 MONTH','MM/YYYY') AS "SAL Month", 
+	empbillsectid(a.empid) AS "BILL SECTION"
+from 
+	ind_bills_master a, emp_master b, paybill c, bills_det d
+where 
+	a.empid=b.empid and a.ind_bill_no=c.ind_bill_no
+	and a.ind_bill_no = d.ind_billno
+	--and indid='NPS'
+	and indid='PEN'
+	and billno between 2022001703 and 2022001792
+	and btype IN ('SAL')
+	order by 1,3

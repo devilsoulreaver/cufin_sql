@@ -1,0 +1,103 @@
+select ind_bills_master.empid, empname(ind_bills_master.empid), sum(paybill.amount)
+from ind_bills_master, paybill , bills_det where 
+ind_bills_master.ind_bill_no = paybill.ind_bill_no and 
+bills_det.ind_billno = ind_bills_master.ind_bill_no and 
+paybill.ind_bill_no = bills_det.ind_billno and
+ind_bills_master.empid between '3200' and '3600' and 
+billno > '2020002181' and
+btype IN ('INC', 'SAL', 'MISC','BON') 
+and paybill.indid IN ('PFS') group by ind_bills_master.empid order by ind_bills_master.empid
+
+
+
+
+select empid, empname(empid), amount from ind_bills_master, paybill where ind_bills_master.ind_bill_no = paybill.ind_bill_no and indid='GI' and ofdate ='01/01/2022'
+
+
+
+select empid, empname(empid), paybill.*
+from ind_bills_master, paybill 
+where ind_bills_master.ind_bill_no = paybill.ind_bill_no and
+ofdate ='01/09/2019' and empid ='3570'
+
+
+
+select ind_bills_master.empid, empname(ind_bills_master.empid), sum(paybill.amount)
+from ind_bills_master, paybill , aswathy where 
+ind_bills_master.ind_bill_no = paybill.ind_bill_no and 
+aswathy.empid = ind_bills_master.empid and aswathy.office ='SORTED-RTD' AND
+btype IN ('INC', 'SAL') and
+ofdate = '01/03/2021' and 
+paybill.groupid = 'ALLOWBP'
+group by ind_bills_master.empid order by ind_bills_master.empid
+
+select ind_bills_master.empid, empname(ind_bills_master.empid), sum(paybill.amount)
+from ind_bills_master, paybill , aswathy where 
+ind_bills_master.ind_bill_no = paybill.ind_bill_no and 
+aswathy.empid = ind_bills_master.empid and aswathy.office ='SORTED-RTD' AND
+btype IN ('INC', 'SAL') and
+ofdate = '01/03/2021' and 
+paybill.indid = 'LEAVEBP'
+group by ind_bills_master.empid order by ind_bills_master.empid
+
+
+
+and paybill.remarks NOT LIKE '%HPL%'
+
+
+
+
+
+
+
+
+
+
+
+'ALLOWBP'
+LEAVEBP
+
+
+select empid, empname(empid), paybill.*
+from ind_bills_master, paybill 
+where ind_bills_master.ind_bill_no = paybill.ind_bill_no and
+ofdate ='01/07/2020' and empid ='2586' and btype in ('SAL', 'INC')
+
+
+select ind_bills_master.empid, empname, gross, ind_bills_master.ind_bill_no
+from ind_bills_master, aswathy, paybill
+where ind_bills_master.empid = aswathy.empid and paybill.ind_bill_no = ind_bills_master.ind_bill_no and
+paybill.remarks IN ( 'DAA_23_36','DAA_20/23') order by ind_bills_master.empid
+
+
+select empid, empname(empid), paybill.*
+from ind_bills_master, paybill 
+where ind_bills_master.ind_bill_no = paybill.ind_bill_no and
+ofdate ='01/04/2021' and empid ='992' and btype in ('SAL', 'INC')
+
+
+
+select empid, empname(empid), sum(amount) AS BP
+from ind_bills_master, paybill 
+where ind_bills_master.ind_bill_no = paybill.ind_bill_no 
+and ofdate  between '01/04/2020' and '01/03/2021' 
+and btype in ('SAL', 'INC') and indid ='BP' group by empid
+
+
+select empid, empname(empid), amount from
+paybill, ind_bills_master where
+ind_bills_master.ind_bill_no = paybill.ind_bill_no
+and ind_bills_master.ind_bill_no between '472808' and '472831'
+and indid ='DAA'
+
+
+Ad.AI
+
+
+ ('NSI','ATHIRAMPUZHA', 'D')
+
+INSERT INTO city_office_master 
+VALUES  ('NSI','ATHIRAMPUZHA', 'D')
+
+INSERT INTO city_office_master 
+VALUES  ('NSI','ATHIRAMPUZHA', 'D')

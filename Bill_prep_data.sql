@@ -1,0 +1,1 @@
+select distinct name from auqitance_group_master

@@ -1,0 +1,1 @@
+select empid, empname(empid), prannumber from emp_master where prannumber is not null

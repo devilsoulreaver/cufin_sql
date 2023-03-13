@@ -1,0 +1,1 @@
+select emp_master.empname, ind_bills_master.empid, paybill.amount from emp_master, ind_bills_master, paybill where emp_master.empid=ind_bills_master.empid and ind_bills_master.ind_bill_no=paybill.ind_bill_no and ind_bills_master.ofdate between '01/11/2020' and '01/07/2021' and paybill.indid='FEST' 

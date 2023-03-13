@@ -1,0 +1,1 @@
+select empid, empname(empid), paybill.amount, paybill.remarks from ind_bills_master, paybill where ind_bills_master.ind_bill_no = paybill.ind_bill_no and empid between '3200' and '3600' and ind_bills_master.btype='SUR' and ind_bills_master.ofdate between '01/03/2021' and '01/04/2021' and paybill.indid='BP'

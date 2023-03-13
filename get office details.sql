@@ -1,0 +1,1 @@
+select empid, empname(empid), empoffice(empid) from emp_master where empoffice(empid) NOT LIKE '%SORTED-RTD%'

@@ -1,0 +1,34 @@
+SUPPLY
+GROSS
+
+SELECT empid as "PF NO", empname(empid) as "NAME", COALESCE(get_panno(empid),'0')as "PAN NO", SUM(gross) as "GROSS", BTYPE as "TYPE"
+from ind_bills_master i, bills_det b
+where i.ind_bill_no = b.ind_billno
+and billno between 2022000514 and 2022000622
+AND BTYPE IN('SAL', 'INC')
+GROUP BY EMPID, BTYPE
+order by empid
+
+IT
+SELECT empid, empname(empid), sum(amount)
+from ind_bills_master i,
+bills_det b, paybill p
+where p.ind_bill_no = b.ind_billno
+AND i.ind_bill_no = p.ind_bill_no
+and billno between 2022000514 and 2022000622
+and INDID ='INCTAX'
+group by empid
+order by empid
+
+
+LEAVE
+
+SELECT empid, empname(empid), sum(amount) as "LEAVE"
+from ind_bills_master i,
+bills_det b, paybill p
+where p.ind_bill_no = b.ind_billno
+AND i.ind_bill_no = p.ind_bill_no
+and billno between 2022000514 and 2022000622
+and GROUPID ='DEDLEAVE'
+group by empid
+order by empid

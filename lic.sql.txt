@@ -1,0 +1,10 @@
+select a.empid,empname(a.empid) ,b.policyno ,
+a.premiumamt::int4 ,
+b.effectdate 
+from lic a,lic_trans b,bills_det c,ind_bills_master d 
+where b.policyno=a.policyno  
+and b.ind_bill_no=c.ind_billno 
+and c.billno>=2022000442 and c.billno<=2022000513 
+and d.ind_bill_no=c.ind_billno 
+and d.btype in ('SAL','SUBAL') 
+and b.refunded='N'

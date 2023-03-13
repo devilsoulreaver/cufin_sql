@@ -1,0 +1,1 @@
+UPDATE lic SET premiumamt = aswathy.premiumamt FROM aswathy WHERE aswathy.policyno = lic.policyno and aswathy.mat_mm_yy ='01:9999' and aswathy.from_mm_yy='02:2022'

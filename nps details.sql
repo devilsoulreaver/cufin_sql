@@ -1,0 +1,1 @@
+select empid, empname(empid), sum(paybill.amount) from paybill, ind_bills_master where paybill.ind_bill_no = ind_bills_master.ind_bill_no and ind_bills_master.ofdate ='01/04/2020' and paybill.indid='NPS' group by empid

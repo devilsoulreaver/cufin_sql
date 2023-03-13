@@ -1,0 +1,9 @@
+select 
+	 ib.empid,  get_upen(ib.empid),empname(ib.empid), max(cur_bp), max(wefdate)
+from 
+	ind_bills_master ib 
+join emp_bp_incr bp
+	on ib.empid = bp.empid 
+where ofdate >'01/01/2023' 
+group by ib.empid
+order by 1

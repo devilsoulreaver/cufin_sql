@@ -1,0 +1,7 @@
+select distinct empid, empname(empid), gross, deds, 
+net,sum(amount) as "ALLOWS", btype, TO_CHAR(ofdate - INTERVAL '1 MONTH','MM/YYYY') AS "SAL Month"
+from ind_bills_master join paybill using(ind_bill_no)
+where empid ='2869' and ofdate between '02/02/2012'
+and '14/02/2014' and groupid like 'ALLOW%'
+group by empid, ofdate, gross, deds, net, btype
+order by btype

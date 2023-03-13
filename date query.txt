@@ -1,0 +1,5 @@
+
+/*select empid, empname(empid), gross, 
+to_char(ofdate - interval '1 month',' MM:YYYY'), to_char(ofdate,'MM:YYYY')from ind_bills_master
+
+where ofdate ='01/11/2022' and empid ='3405'*/

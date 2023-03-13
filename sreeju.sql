@@ -1,0 +1,1 @@
+select distinct emp_master.empid, emp_master.empname from emp_master left join ind_bills_master on  emp_master.empid=ind_bills_master.empid where ind_bills_master.ofdate between '01/08/2019' and '01/03/2021' and emp_master.empid between '0001' and '4000'
